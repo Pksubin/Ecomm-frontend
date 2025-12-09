@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<div class="hero-box text-center">
+    <h1 class="fw-bold fade-in-down">Welcome to E-Commerce</h1>
+    <p class="mt-2 fade-in">A professional Django mini project ready for deployment.</p>
+
+    <img src="https://cdn-icons-png.flaticon.com/512/2331/2331970.png" 
+         class="hero-img fade-in-up">
+
+    <a href="{% url 'about' %}" class="btn btn-primary px-4 fade-in-up mt-3">
+        Learn More
+    </a>
+</div>
+
+<!-- Featured Products Preview -->
+<section class="container my-5">
+    <h2 class="text-center fw-bold mb-4">Featured Products</h2>
+
+    <div class="row justify-content-center">
+        <div class="col-10 col-md-4 mb-4">
+            <div class="product-card shadow-sm">
+                <img src="https://images.pexels.com/photos/296112/pexels-photo-296112.jpeg" class="card-img-top">
+                <div class="p-3">
+                    <h5 class="fw-bold">Smart Headphones</h5>
+                    <p class="text-muted small">High quality sound with noise cancellation.</p>
+                    <button class="btn btn-outline-primary w-100">View</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-10 col-md-4 mb-4">
+            <div class="product-card shadow-sm">
+                <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg" class="card-img-top">
+                <div class="p-3">
+                    <h5 class="fw-bold">Smart Watch</h5>
+                    <p class="text-muted small">Track your fitness & daily activity easily.</p>
+                    <button class="btn btn-outline-primary w-100">View</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-10 col-md-4 mb-4">
+            <div class="product-card shadow-sm">
+                <img src="https://images.pexels.com/photos/919436/pexels-photo-919436.jpeg" class="card-img-top">
+                <div class="p-3">
+                    <h5 class="fw-bold">Bluetooth Speaker</h5>
+                    <p class="text-muted small">Portable speaker with powerful bass.</p>
+                    <button class="btn btn-outline-primary w-100">View</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+    /* Hero Section */
+.hero-box {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #6CC6FF, #4B89FF);
+    color: white;
+    border-radius: 20px;
+    margin: 30px auto;
+    max-width: 900px;
+}
+
+.hero-img {
+    max-width: 220px;
+    margin: 20px auto;
+    display: block;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
+}
+.fade-in-down {
+    animation: fadeInDown 1s ease forwards;
+    opacity: 0;
+}
+.fade-in-up {
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Product cards */
+.product-card {
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.product-card img {
+    height: 220px;
+    object-fit: cover;
+}
+
+</style>
+{% endblock %}
